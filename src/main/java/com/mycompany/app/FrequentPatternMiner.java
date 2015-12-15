@@ -13,7 +13,10 @@ import java.util.List;
 
 public class FrequentPatternMiner {
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf().setAppName("FP-growth Example").setMaster("local[2]");
+        SparkConf conf = new SparkConf();
+        conf.setAppName("FP Analyser");
+        conf.setMaster("local");
+
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> data = sc.textFile("sample.txt");
